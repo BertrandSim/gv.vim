@@ -211,7 +211,7 @@ function! s:list(log_opts)
   let bufname = repo_short_name.' '.join(a:log_opts)
   silent exe (bufexists(bufname) ? 'buffer' : 'file') fnameescape(bufname)
 
-  let default_opts = ['--color=never', '--date=short', '--format=%cd %h%d %s (%an)']
+  let default_opts = ['--color=never', '--date=short', '--format=%ad %h%d %s (%an)']
   let git_args = ['log'] + default_opts + a:log_opts
   let b:git_log_cmd = FugitiveShellCommand(git_args)
 
